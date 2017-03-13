@@ -1,0 +1,19 @@
+Tiberiade\MainBundle\Entity\Article:
+    repositoryClass: Tiberiade\MainBundle\Entity\ArticleRepository
+    type: entity
+    table: articles
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        titre:
+            type: text
+        description:
+            type: text
+        resume:
+            type: text
+        datePublication:
+            type: date
+        urlImage:
+            type: string

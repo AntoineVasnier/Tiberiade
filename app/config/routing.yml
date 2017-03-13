@@ -1,0 +1,4 @@
+tiberiade_main:
+    resource: "@TiberiadeMainBundle/Resources/config/routing.yml"
+    prefix:   /
+

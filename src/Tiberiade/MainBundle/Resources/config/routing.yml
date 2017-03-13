@@ -1,0 +1,26 @@
+index:
+    path:     /
+    defaults: { _controller: TiberiadeMainBundle:Default:index }
+connexion:
+    path:     /connexion
+    defaults: { _controller: TiberiadeMainBundle:Default:connexion }
+logout: 
+    path:     /deconnexion
+creerCompte:
+    path:     /creerCompte
+    defaults: { _controller: TiberiadeMainBundle:Default:creerCompte }
+admin:
+    path:     /admin
+    defaults: { _controller: TiberiadeMainBundle:Admin:index }
+admin_article:
+    path:     /admin/articles
+    defaults: { _controller: TiberiadeMainBundle:Admin:articles }
+admin_activitesFutur:
+    path:     /admin/activitesFutur
+    defaults: { _controller: TiberiadeMainBundle:Admin:index }
+admin_utilisateur:
+    path:     /admin/utilisateurs
+    defaults: { _controller: TiberiadeMainBundle:Admin:index }
+ajouterArticle:
+    path:     /admin/articles/ajout
+    defaults: { _controller: TiberiadeMainBundle:Admin:ajoutArticle }

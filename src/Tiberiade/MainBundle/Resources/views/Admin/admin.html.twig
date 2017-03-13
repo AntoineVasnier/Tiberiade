@@ -1,0 +1,12 @@
+{% extends 'TiberiadeMainBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Admin
+{% endblock %}
+
+{% block body %}
+    <h2>Panneau d'administration : </h2>
+    <p><a href="{{ path('admin_article')}}">Gérer les articles</a></p>
+    <p><a href="{{ path('admin_activitesFutur')}}">Gérer les activités à venir</a></p>
+    <p><a href="{{ path('admin_utilisateur')}}">Gérer les utilisateurs</a></p>
+{% endblock %}

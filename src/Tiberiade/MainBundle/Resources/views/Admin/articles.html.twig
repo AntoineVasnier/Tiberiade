@@ -1,0 +1,16 @@
+{% extends 'TiberiadeMainBundle::general.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Admin - Articles
+{% endblock %}
+
+{% block body %}
+    <h2>Gérer les articles : </h2>
+    <a href='{{ path('ajouterArticle')}}'><img class="icone" src="{{asset('bundles/tiberiademain/img/ajouter.png')}}">Ajouter un article</a>
+    {% if articles is empty %}       
+        <h3>---- Aucun article n'a été trouvée ----</h3>       
+    {% endif%}
+    {% for article in articles %}
+        <p>{{ loop.index }} - {{ article.getTitre() }} - {{ article.getResume() }}<a href='{#{{ path('modifierArticle',{'id':annonce.id})}}#}'><img class="icone" src="{{ asset('bundles/tiberiademain/img/modifier.jpg') }}" alt='bouton modifier'></a> <a href='{#{{ path('supprimerArticle',{'id':annonce.id})}}#}'><img class="icone" src="{{ asset('bundles/tiberiademain/img/supprimer.png') }}" alt='bouton supprimer'></a></p>
+    {% endfor %}
+{% endblock %}

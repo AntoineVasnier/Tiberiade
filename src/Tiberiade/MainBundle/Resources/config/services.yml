@@ -1,0 +1,4 @@
+services:
+#    tiberiade_main.example:
+#        class: Tiberiade\MainBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

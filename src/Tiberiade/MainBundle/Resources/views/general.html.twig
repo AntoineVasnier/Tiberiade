@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ asset('bundles/tiberiademain/css/styles.css') }}" rel="stylesheet" type="text/css" />
+        <link rel="icon" type="image/png" href="{{ asset('bundles/tiberiademain/img/icone.png')}}" />
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+           <!-- Ajoute fancyBox qui permet de voir les images en plus grand-->
+        <link rel="stylesheet" href="{{ asset('bundles/tiberiademain/js/fancybox/source/jquery.fancybox.css')}}" type="text/css" media="screen" />
+        <script type="text/javascript" src="{{ asset('bundles/tiberiademain/js/fancybox/source/jquery.fancybox.pack.js')}}"></script>
+
+        <script src="script.js"></script>
+
+        <!-- Javascript -->
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $(".fancybox").fancybox({
+              openEffect  : 'elastic',
+              closeEffect : 'elastic',
+              width : '50%',
+              height : '70%',
+
+              helpers : {
+                title : {
+                  type : 'inside'
+                }
+              }
+            });
+          });
+        </script>
+        <title>{% block title %}Tibériade{% endblock %}</title>
+    </head>
+    <body>       
+        <nav id="cssmenu">
+                <img id="logo" src="{{ asset('bundles/tiberiademain/img/logoTiberiade.png')}}" alt="Logo de tibériade">
+                <p class="decalageSlogan">Un lieu d'accueil,</p>
+                <p class="decalageSlogan1">Un lieu d'écoute,</p>
+                <p class="decalageSlogan2">Un lieu d'échange ...</p>
+                <ul>
+                    <li class='active'><a href="{{ path('index') }}"><span>Accueil</span></a></li>
+                    <li><a href="{#{{ path('histoire') }}#}"><span>Notre histoire</span></a></li>
+                    <li class='has-sub'><a href="{#{{ path('manifs') }}#}"><span>Manifestations</span></a>
+                        <ul>
+                            <li><a href="{#{{ path('marches') }}#}"><span>Marches</span></a></li>
+                            <li><a href="{#{{ path('conferences') }}#}"><span>Conférences</span></a></li>
+                            <li><a href="{#{{ path('marcheNoel') }}#}"><span>Marché de Noël</span></a></li>
+                            <li><a href="{#{{ path('sorties') }}#}"><span>Sorties</span></a></li>
+                            <li><a href="{#{{ path('autres') }}#}"><span>Autres</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="{#{{ path('jeunes') }}#}"><span>Jeunes</span></a>
+                        <ul>
+                            <li><a href="{#{{ path('enfants') }}#}"><span>Enfants</span></a></li>
+                            <li><a href="{#{{ path('ados') }}#}"><span>Jeunes</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="{#{{ path('espace') }}#}"><span>Espace Tibériade</span></a>
+                        <ul>
+                            <li><a href="{#{{ path('cafe') }}#}"><span>Pause Café</span></a></li>
+                            <li><a href="{#{{ path('livres') }}#}"><span>Coin Livre</span></a></li>
+                         </ul>
+                    </li>
+                    <li class='last'><a href="{#{{ path('contact') }}#}"><span>Contact</span></a></li> 
+                    {% if app.user %}
+                        {% if app.user.username == 'admin' %}
+                            <li><a href="{{ path('admin') }}">Administration</a></li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+                <p class="slogan1">
+                    “À Tibériade, tu trouveras
+                    <br>
+                    un accueil, une présence,
+                    <br>
+                    une parole, un livre qui
+                    <br>
+                    peuvent répondre à tes
+                    <br>
+                    questionnements... ”
+                </p>
+        </nav>
+        <content>
+            <header>
+                {% block header %}
+                        <h1>Tibériade</h1>
+                {% endblock %}
+            </header>
+            <div id="contenu">
+                {% block body %}{% endblock %}
+            </div>
+            <footer>
+                {% block footer %}
+                {% if app.user %}
+                    © 2017 Tibériade - Tous droits réservés - <a href="{{ path('logout')}}">Déconnexion</a>
+                {% else %}
+                    © 2017 Tibériade - Tous droits réservés - <a href="{{ path('connexion')}}">Connexion</a> 
+                {% endif %}                
+                {% endblock %}
+            </footer>
+        </content>        
+    </body>
+</html>
