@@ -1,17 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Oxygen+Mono);
+/*@import url(http://fonts.googleapis.com/css?family=Oxygen+Mono);
 @import url(http://fonts.googleapis.com/css?family=Dancing+Script);
 @import url(http://fonts.googleapis.com/css?family=Fanwood+Text);
-/* Please Keep this font import at the very top of any CSS file */
-/* Starter CSS for Flyout Menu */
+ Please Keep this font import at the very top of any CSS file 
+ Starter CSS for Flyout Menu 
 
 
-/*----------------------------------
+----------------------------------
 ------------Balises-----------------
-----------------------------------*/
+----------------------------------
 
-/**********************************
+*********************************
 **********HEADER*******************
-**********************************/
+*********************************
 
 
 
@@ -29,9 +29,9 @@ h1{
 }
 
 
-/*----------------------------------
+----------------------------------
 ------------Logo--------------------
-----------------------------------*/
+----------------------------------
 
 #logo{
     width: 80%;
@@ -168,9 +168,9 @@ td{
     margin-top : 250px;
 }
 
-/*----------------------------------
+----------------------------------
 ------------Menu--------------------
-----------------------------------*/
+----------------------------------
 
 #cssmenu {
     padding: 0;
@@ -253,11 +253,11 @@ td{
 
 
 
-/*#cssmenu img{
+#cssmenu img{
     width: 300px;
     margin-left: -10px;
     margin-top: -250px;
-}*/
+}
 
 #cssmenu:before {
     content: '';
@@ -411,9 +411,9 @@ td{
     border-radius: 3px 0 0 3px;
 }
 
-/*----------------------------------
+----------------------------------
 ---------Slogan dans Menu-----------
-----------------------------------*/
+----------------------------------
 
 #slogan{
     margin-top: -25px;
@@ -457,11 +457,11 @@ td{
     margin-bottom: 50px;
 }
 
-/*----------------------------------
+----------------------------------
 ------------Slider------------------
-----------------------------------*/
+----------------------------------
 
-/*.slides { 
+.slides { 
     padding: 0;
     width: 409px;
     height: 220px;
@@ -574,11 +574,11 @@ input#img-5:checked ~ .nav-dots label#img-dot-5,
 input#img-6:checked ~ .nav-dots label#img-dot-6 {
   background: rgba(0, 0, 0, 0.8);
 }
-*/
 
-/*----------------------------------
+
+----------------------------------
 ---------------Main-----------------
-----------------------------------*/
+----------------------------------
 
 #main{
     width: 80%;
@@ -592,9 +592,9 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     }
 }
 
-/*----------------------------------
+----------------------------------
 ------------Style SideBar-----------
-----------------------------------*/
+----------------------------------
 
 #sidebar {
     background-image: url('images/fondSidebar.jpg');
@@ -607,9 +607,9 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     float: left;
 }
 
-/*----------------------------------
+----------------------------------
 -------------Content----------------
-----------------------------------*/
+----------------------------------
 
 #content{
     width: 80%;
@@ -621,21 +621,21 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     overflow-y : hidden;
 }
 
-/*----------------------------------
+----------------------------------
 ----Partie Gauche de Content--------
-----------------------------------*/
+----------------------------------
 
 #texteGauche {
     float: left;
     margin-left: 2%;
     z-index: 30;
     width: 58%;
-    /*padding-right: 10px;*/
+    padding-right: 10px;
 }
 
-/*---------------------------------
+---------------------------------
 -----Partie Droite de Content------
----------------------------------*/
+---------------------------------
 
 #texteDroite {
     width: 36%;
@@ -643,8 +643,8 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     float:left;
     margin-left: 2%;
     margin-right: 2%;
-    /*border: solid #8AC007 1px;*/
-    /*padding-bottom: 10px;*/
+    border: solid #8AC007 1px;
+    padding-bottom: 10px;
 }
 
 #horaires{
@@ -695,7 +695,7 @@ article img{
 .article_colonne{
     width: 96%;
     float:left;
-    /*border: solid #8AC007 1px;*/
+    border: solid #8AC007 1px;
     padding-left:2%;
     padding-right: 2%;
     margin-bottom: 5%;
@@ -734,9 +734,9 @@ h4{
     padding-top: 10px;
 }
 
-/*----------------------------------
+----------------------------------
 ------------Pages--------------------
-----------------------------------*/
+----------------------------------
 
 #titre {
     width:100%;
@@ -758,18 +758,18 @@ h4{
 
 
 
-/*----------------------------------
+----------------------------------
 ------------Style Contenu-----------
-----------------------------------*/
+----------------------------------
 
 
 .liste{
     margin-left: 50px;
 }
 
-/*----------------------------------
+----------------------------------
 ------------Footer------------------
-----------------------------------*/
+----------------------------------
 
 #footer {
     color: #030925;
@@ -793,9 +793,9 @@ h4{
 }
 
 
-/*----------------------------------
+----------------------------------
 ------------Jeunes------------------
-----------------------------------*/
+----------------------------------
 
 #grdslide .slides{
     padding: 0;
@@ -828,9 +828,9 @@ h4{
     width: 200px;
 }
 
-/*----------------------------------
+----------------------------------
 ------------Autre-------------------
-----------------------------------*/
+----------------------------------
 
 .fleche{
     color:#5364aa;
@@ -988,9 +988,9 @@ h4{
     text-align: center;
     font-variant: small-caps;
 }
-/*--------------------------------------------------
+--------------------------------------------------
 --------------JEUNES--------------------------------
---------------------------------------------------*/
+--------------------------------------------------
 .en_tete_jeunes{
     font-size: 1.2em;
     text-align: center;
@@ -1151,9 +1151,9 @@ h4{
     height: 80%;
 }
 
-/*****************************************************
+****************************************************
 ************Lien témoignages**************************
-*****************************************************/
+****************************************************
 a{
     text-decoration: none;
     color:#5364A9;
@@ -1167,7 +1167,7 @@ a:hover{
     margin-right: 5px;
 }
 
-/****PROVISOIRE*/
+***PROVISOIRE
 .policePropre{
     font-family: Calibri;
 }
@@ -1175,4 +1175,128 @@ a:hover{
     font-family: Calibri;
     text-decoration: underline;
     font-size: 16px;
+}*/
+/*body{
+    
+}
+nav{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    padding-top: 15%;
+    margin-left: 5%;
+}
+
+content {
+    margin-left: calc(5% + 200px);
+}
+
+header {
+    height: 300px;
+}
+h1{
+    text-align: center;
+}*/
+
+html, body{
+    height: 100%;
+}
+
+
+nav {
+    width: 20%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    /* css in addition */  
+    color: #c1c1c1;
+    background: #1f282d;
+    margin-left: 5%;
+}
+
+nav aside{
+    position: relative;
+    float: left;
+    width: 100%;
+    /* css in addition */  
+    padding-top: 1em;
+    color: #fff;
+    background: #1f282d;
+}
+
+section{
+    /*    width: 75%;*/
+    margin-left: 25%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 50px;
+
+}
+
+/* Some css to make prettier */
+
+body{
+    margin: 0;
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+}
+aside h2{
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+aside li a{
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    padding: 0.5em 0;
+    text-decoration: none;
+    opacity: 0.7;
+}
+aside li:hover a{
+    opacity: 1;
+}
+aside ul{
+    padding-left: 1em;
+}
+aside li{
+    padding-left: 1em;
+    margin: 0.1em 0;
+    list-style: none;
+    background: no-repeat;
+    background-position: 0.5em center;
+    border-radius: 0.2em 0 0 0.2em;
+}
+aside li:hover{
+    cursor: pointer;
+    background-color: rgba(00,00,00,0.3);    
+}
+
+header {
+    width: 75%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+h1 {
+    margin:0;
+}
+
+.img-articles {
+    width: 375px;
+    height: 216px;
+    float: left;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+}
+
+.contenuArticle {
+    display: flex;
 }

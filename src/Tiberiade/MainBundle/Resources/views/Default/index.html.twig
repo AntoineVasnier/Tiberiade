@@ -5,29 +5,57 @@
 {% endblock %}
 
 {% block body %}
-    <div id="contentIndex">
-        <div id="leftContent">
-            <h2>Actualités</h2>
-            {% for article in articles %}
-                <article>
-                    <div class="contenuArticle">
-                        <img src="{{ asset('bundles/tiberiademain/img/actus/' ~ article.urlImage) }}" alt="">
-                        <div class="resume">
-                            <h3>{{ article.datePublication|date('d/m/Y')}} - {{article.titre }}</h3>
-                            <p>{{ article.description}}</p>
-                        </div>
-                    </div>
-                </article>
-            {% endfor%}                        
-        </div>
-        <div id="rightContent">
-            <div id="ouverture">
-                <h2>Horaires d'ouverture</h2>
-                <h4>Jeudi matin de 10h à 12h</h4>
-                <h4>Samedi matin de 10h à 12h</h4>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <p>
+                    “À Tibériade, tu trouveras un accueil, une présence, une parole, un livre qui peuvent répondre à tes questionnements... ”
+                </p>
             </div>
-            <div id="bientot">
+            <div class="col-md-3">
+                <h2><Horaires</h2>
+                <h3>Jeudi matin de 10h à 12h</h3>
+                <h3>Samedi matin de 10h à 12h</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <h2>Actualités</h2>
+                {% for article in articles %}
+                    <article>
+                        <div class="contenuArticle">
+                            <div class="img-articles" style="background-image: url('{{ asset('bundles/tiberiademain/img/actus/' ~ article.urlImage) }}')"></div>
+                            <!--<img class="img-articles" src="{#{{ asset('bundles/tiberiademain/img/actus/' ~ article.urlImage) }}#}" alt="">-->
+                            <div class="resume">
+                                <h3>{{ article.datePublication|date('d/m/Y')}} - {{article.titre }}</h3>
+                                <p>{{ article.description}}</p>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor%}    
+            </div>
+            <div class="col-md-3">
                 <h2>Bientôt à Tibériade</h2>
+                <div class='center'>
+                <a class='fancybox' href="images/actus/confBernardOllivier.png" rel="accueil" title="Conférence Bernard Ollivier">
+                  <img class='images_actus' src="images/actus/confBernardOllivier.png" alt="Conférence Bernard Ollivier" />
+                </a><br>
+                <span class="titreMarche">Vendredi 24 mars</span>
+                <br>
+                <span>Conférence "Marche et invente ta vie"
+                  <br>par Bernard Ollivier
+                  <br>Salle Iris à Fégréac - 20h
+                </span>
+              </div>
+              <br/><hr/><br/>
+              <div class='center'>
+                <span class="titreMarche">Dimanche 7 mai</span>
+                <br>
+                <span>Marche de Printemps
+                  <br>à Fégréac
+                </span>
+              </div>
             </div>
         </div>
     </div>
