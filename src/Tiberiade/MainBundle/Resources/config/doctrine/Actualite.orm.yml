@@ -1,0 +1,19 @@
+Tiberiade\MainBundle\Entity\Actualite:
+    repositoryClass: Tiberiade\MainBundle\Entity\ActualiteRepository
+    type: entity
+    table: actualites
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        titre:
+            type: text
+        dateDebut:
+            type: date
+        dateFin:
+            type: date
+        urlImage:
+            type: string
+            
+    

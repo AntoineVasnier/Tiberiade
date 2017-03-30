@@ -2,7 +2,7 @@
 
 namespace Tiberiade\MainBundle\Entity;
 
-class Actualites {
+class Actualite {
     private $id;
     private $titre;
     private $dateDebut;

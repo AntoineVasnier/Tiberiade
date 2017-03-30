@@ -37,9 +37,10 @@
             </div>
             <div class="col-md-3">
                 <h2>Bientôt à Tibériade</h2>
+                {% for actualite in actualites %}
                 <div class='center'>
                 <a class='fancybox' href="images/actus/confBernardOllivier.png" rel="accueil" title="Conférence Bernard Ollivier">
-                  <img class='images_actus' src="images/actus/confBernardOllivier.png" alt="Conférence Bernard Ollivier" />
+                  <img class='img-articles' src={{ asset('bundles/tiberiademain/img/actus/' ~ actualite.urlImage) }} alt="Conférence Bernard Ollivier" />
                 </a><br>
                 <span class="titreMarche">Vendredi 24 mars</span>
                 <br>
@@ -56,6 +57,7 @@
                   <br>à Fégréac
                 </span>
               </div>
+              {% endfor %}
             </div>
         </div>
     </div>
