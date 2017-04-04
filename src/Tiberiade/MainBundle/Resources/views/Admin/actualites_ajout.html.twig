@@ -1,15 +1,14 @@
 {% extends 'TiberiadeMainBundle::general.html.twig' %}
 
 {% block title %}
-    {{ parent() }} - Ajout article
+    {{ parent() }} - Ajout actualité
 {% endblock %}
 
 {% block body %}
-    <h2>Ajouter un article : </h2>
+    <h2>Ajouter une actualité : </h2>
     <div style="margin: 15px 0">
     {{ form_start(form)}}
     {% include 'form.html.twig' with { "form" : form } only %}
     {{ form_end(form)}}
     </div>
-    
 {% endblock %}

@@ -15,12 +15,15 @@ admin:
 admin_article:
     path:     /admin/articles
     defaults: { _controller: TiberiadeMainBundle:Admin:articles }
-admin_activitesFutur:
-    path:     /admin/activitesFutur
-    defaults: { _controller: TiberiadeMainBundle:Admin:index }
+admin_actualite:
+    path:     /admin/actualites
+    defaults: { _controller: TiberiadeMainBundle:Admin:actualites }
 admin_utilisateur:
     path:     /admin/utilisateurs
     defaults: { _controller: TiberiadeMainBundle:Admin:index }
 ajouterArticle:
     path:     /admin/articles/ajout
     defaults: { _controller: TiberiadeMainBundle:Admin:ajoutArticle }
+ajouterActualite:
+    path:     /admin/actualites/ajout
+    defaults: { _controller: TiberiadeMainBundle:Admin:ajoutActualite}

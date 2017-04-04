@@ -13,7 +13,10 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $repArticle = $em->getRepository('TiberiadeMainBundle:Article');
         $articles = $repArticle->getLastArticles(10);
-        return $this->render('TiberiadeMainBundle:Default:index.html.twig', array('articles' => $articles));
+        
+        $repActualite = $em->getRepository('TiberiadeMainBundle:Actualite');
+        $actualites = $repActualite->getLastActualites(5);
+        return $this->render('TiberiadeMainBundle:Default:index.html.twig', array('articles' => $articles, 'actualites' => $actualites));
     }
     
     public function connexionAction()

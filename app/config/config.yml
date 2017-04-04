@@ -4,6 +4,7 @@ imports:
 
 parameters:
     images_article: '%kernel.root_dir%/../web/bundles/tiberiademain/img/actus/'
+    images_actus: '%kernel.root_dir%/../web/bundles/tiberiademain/img/actus/'
 
 framework:
     #esi:             ~

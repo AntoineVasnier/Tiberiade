@@ -7,6 +7,7 @@ class Actualite {
     private $titre;
     private $dateDebut;
     private $dateFin;
+    private $file;
     private $urlImage;
     
     public function getId(){
@@ -27,6 +28,10 @@ class Actualite {
     
     public function getUrlImage(){
         return $this->urlImage;
+    }
+    
+    public function getFile(){
+        return $this->file;
     }
     
     public function setId($id){
@@ -55,5 +60,10 @@ class Actualite {
     
     public function setUrlImage($urlImage){
         $this->urlImage = $urlImage;
+    }
+    
+    public function setFile($file){
+        $this->file = $file;
+        return $this;
     }
 }

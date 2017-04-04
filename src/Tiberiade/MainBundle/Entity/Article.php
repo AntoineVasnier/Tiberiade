@@ -8,6 +8,7 @@ class Article {
     private $description;
     private $resume;
     private $datePublication;
+    private $file;
     private $urlImage;
     
     public function getId(){
@@ -34,6 +35,10 @@ class Article {
         return $this->urlImage;
     }
     
+    public function getFile(){
+        return $this->file;
+    }
+    
     public function setId($id){
         $this->id = $id;
     }
@@ -57,5 +62,9 @@ class Article {
     public function setUrlImage($urlImage){
         $this->urlImage = $urlImage;
     }
-
+    
+    public function setFile($file){
+        $this->file = $file;
+        return $this;
+    }
 }

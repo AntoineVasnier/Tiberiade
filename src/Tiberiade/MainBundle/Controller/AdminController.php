@@ -3,11 +3,11 @@
 namespace Tiberiade\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\Validator\Constraints\DateTime;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\HttpFoundation\Request;
+use Tiberiade\MainBundle\Entity\Actualite;
 use Tiberiade\MainBundle\Entity\Article;
+use Tiberiade\MainBundle\Forms\actualiteType;
+use Tiberiade\MainBundle\Forms\articleType;
 
 class AdminController extends Controller
 {
@@ -20,69 +20,71 @@ class AdminController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $rep = $em->getRepository('TiberiadeMainBundle:Article');
-        $articles = $rep->findAll();
+        $articles = $rep->getLastArticles(5);
         return $this->render('TiberiadeMainBundle:Admin:articles.html.twig', array('articles' => $articles));
     }
     
-    public function ajoutArticleAction()
+    public function actualitesAction()
+    {
+        $em = $this-> getDoctrine()->getManager();
+        $rep = $em->getRepository('TiberiadeMainBundle:Actualite');
+        $actualites = $rep->getLastActualites(5);
+        return $this->render('TiberiadeMainBundle:Admin:actualites.html.twig', array('actualites' => $actualites));
+    }
+
+
+    public function ajoutArticleAction(Request $request)
     {
         $article = new Article();
-        $form = $this->getFormulaireAjout($article);
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            /** @var UploadedFile $file */
-            $file = $article->getUrlImage();
-            $fileName = $file->getClientOriginalName();
-            $file->move($this->getParameter('images_article'), $fileName);
-
-            $article->setTitre($form->get('titre')->getData())
-                    ->setDescription($form->get('description')->getData())
-                    ->setResume($form->get('resume')->getData())
-                    ->setUrlImage($fileName)
-                    ->setDatePublication(new DateTime(date('Y-m-d')));
-            $em->persist($article);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('index'));
+        $form = $this->createForm(articleType::class, $article);
+        $form->handleRequest($request);
+        if($form->isSubmitted()){
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $file = $article->getFile();
+                $fileName = $file->getClientOriginalName();
+                $file->move($this->getParameter('images_article'), $fileName);
+                $article->setUrlImage($fileName);
+                $em->persist($article);
+                $em->flush();
+                return $this->redirectToRoute("admin_article");
+            }else{
+                 return $this->render('TiberiadeMainBundle:Admin:articles_ajout.html.twig', array(
+                     'article' => $article,
+                     'form' => $form->createView()
+                 ));
+            }
         }
-        return array('article' => $article, 'form' => $form->createView());
+        return $this->render('TiberiadeMainBundle:Admin:articles_ajout.html.twig', array('article' => $article, 'form' => $form->createView()));
     }
     
-    protected function getFormulaireAjout($article) {
-        $builder = $this->createFormBuilder($article);
-        //Add form fields
-        $builder->add('titre', 'text', array(
-                    'constraints' => array(new NotBlank(), new Length(array(
-                            'min' => 5,
-                            'max' => 50,
-                            'minMessage' => 'Le titre de l\'article doit comporter au minimum {{ limit }} caractères',
-                            'maxMessage' => 'Le titre de l\'article doit comporter au maximum {{ limit }} caractères',
-                                ))),
-                    'label' => 'Titre de l\'article : '
-                ))
-                ->add('description', 'textarea', array(
-                    'constraints' => array(new NotBlank(), new Length(array(
-                            'min' => 20,
-                            'max' => 2000,
-                            'minMessage' => 'La description de l\'article doit comporter au minimum {{ limit }} caractères',
-                            'maxMessage' => 'La description de l\'article doit comporter au maximum {{ limit }} caractères',
-                                ))),
-                    'label' => 'Description de l\'article : '
-                ))
-                ->add('resume', 'text', array(
-                    'constraints' => array(new NotBlank(), new Length(array(
-                            'min' => 5,
-                            'max' => 50,
-                            'minMessage' => 'Le résumé de l\'article doit comporter au minimum {{ limit }} caractères',
-                            'maxMessage' => 'Le résumé de l\'article doit comporter au maximum {{ limit }} caractères',
-                                ))),
-                    'label' => 'Résumé de l\'article : '
-                ))
-                ->add('url_image', 'file')
-                ->add('valider', 'submit');
-        $form = $builder->getForm();
-        $form->handleRequest($this->get('request'));
-
-        return $form;
+    public function ajoutActualiteAction(Request $request)
+    {
+        $actualite = new Actualite();
+        $form = $this->createForm(actualiteType::class, $actualite);
+        $form->handleRequest($request);
+        if($form->isSubmitted()){
+            if ($form->isValid()){
+                $em = $this->getDoctrine()->getManager();
+                $file = $actualite->getFile();
+                $fileName = $file->getClientOriginalName();
+                $file->move($this->getParameter('images_actus'), $fileName);
+                $actualite->setUrlImage($fileName);
+                $em->persist($actualite);
+                $em->flush();
+                return $this->redirectToRoute("admin_actualite");
+            }else{
+                 return $this->render('TiberiadeMainBundle:Admin:actualites_ajout.html.twig', array(
+                     'actualite' => $actualite,
+                     'form' => $form->createView()
+                 ));
+            }
+        }
+        return $this->render('TiberiadeMainBundle:Admin:actualites_ajout.html.twig', array('actualite' => $actualite, 'form' => $form->createView()));
+    }
+    
+    protected function getFormulaireAjout(Request $request) {
+        
+        return array('form' => $form->createView());
     }
 }
