@@ -1200,7 +1200,8 @@ h1{
 }*/
 
 html, body{
-    height: 100%;
+    min-height: 100%;
+    font-size: 1em;
 }
 
 
@@ -1226,20 +1227,16 @@ nav aside{
 }
 
 section{
-    /*    width: 75%;*/
     margin-left: 25%;
     padding-left: 5%;
     padding-right: 5%;
-    margin-top: 50px;
 
 }
 
-/* Some css to make prettier */
+/* Some css to make it prettier */
 
 body{
     margin: 0;
-    height: auto;
-    min-height: 100%;
     width: 100%;
     position: relative;
 }
@@ -1288,6 +1285,12 @@ h1 {
     margin:0;
 }
 
+h1 img {
+    height: 150px;
+    margin: 20px;
+    margin-left: 25%;
+}
+
 .img-articles {
     width: 375px;
     height: 216px;
@@ -1299,4 +1302,65 @@ h1 {
 
 .contenuArticle {
     display: flex;
+}
+
+footer {
+    text-align: center;
+    height: 50px;
+    background-color: #c2c2c2cc;
+    padding: 15px;
+}
+
+.text-accueil {
+    margin-top: 20px;
+    padding: 25px 30px 0 40px;
+    border-top: 5px solid #5364A9;
+}
+
+h2 {
+    background-color: #5364A9;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.horaires {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.soon {
+    background-color: #c2c2c2cc;
+    border-right: 5px solid #8AC007;
+    padding: 15px;
+    margin: 10px 0px;
+}
+
+@media only screen and (max-width : 768px) {
+    .soon {
+        margin: 10px 20px;
+    }
+}
+
+.soon-text {
+    text-align: center;
+    font-size: 0.8em;
+    margin: 10px;
+}
+
+.titreMarche {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.slogan {
+    margin:20px;
+}
+
+.row-soon {
+    margin: 0;
 }

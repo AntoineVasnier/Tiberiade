@@ -45,68 +45,72 @@
             {% block header %}
                 <div class="">
                     <!--<img id="logo" class="center-block img-responsive" src="{#{{ asset('bundles/tiberiademain/img/logo2.jpg')}}#}" alt="Logo de tibériade">-->
-                    <h1>Tibériade</h1>
+                    <h1><img src="{{ asset('bundles/tiberiademain/img/logo2.jpg')}}" alt="Logo de tibériade"/></h1>
                 </div>
             {% endblock %}  
         </header>
-        <nav>
-            <aside>
-            <p class="decalageSlogan">Un lieu d'accueil,</p>
-            <p class="decalageSlogan1">Un lieu d'écoute,</p>
-            <p class="decalageSlogan2">Un lieu d'échange ...</p>
-            <ul>
-                <li class='active'><a href="{{ path('index') }}"><span>Accueil</span></a></li>
-                <li><a href="{#{{ path('histoire') }}#}"><span>Notre histoire</span></a></li>
-                <li class='has-sub'><a href="{#{{ path('manifs') }}#}"><span>Manifestations</span></a>
+        <div class="container-fluid">
+            <nav>
+                <aside>
+                    <div class="slogan">
+                        Un lieu d'accueil,<br>
+                        Un lieu d'écoute,<br>
+                        Un lieu d'échange ...
+                    </div>
                     <ul>
-                        <li><a href="{#{{ path('marches') }}#}"><span>Marches</span></a></li>
-                        <li><a href="{#{{ path('conferences') }}#}"><span>Conférences</span></a></li>
-                        <li><a href="{#{{ path('marcheNoel') }}#}"><span>Marché de Noël</span></a></li>
-                        <li><a href="{#{{ path('sorties') }}#}"><span>Sorties</span></a></li>
-                        <li><a href="{#{{ path('autres') }}#}"><span>Autres</span></a></li>
+                        <li class='active'><a href="{{ path('index') }}"><span>Accueil</span></a></li>
+                        <li><a href="{#{{ path('histoire') }}#}"><span>Notre histoire</span></a></li>
+                        <li class='has-sub'><a href="{#{{ path('manifs') }}#}"><span>Manifestations</span></a>
+                            <ul>
+                                <li><a href="{#{{ path('marches') }}#}"><span>Marches</span></a></li>
+                                <li><a href="{#{{ path('conferences') }}#}"><span>Conférences</span></a></li>
+                                <li><a href="{#{{ path('marcheNoel') }}#}"><span>Marché de Noël</span></a></li>
+                                <li><a href="{#{{ path('sorties') }}#}"><span>Sorties</span></a></li>
+                                <li><a href="{#{{ path('autres') }}#}"><span>Autres</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sub"><a href="{#{{ path('jeunes') }}#}"><span>Jeunes</span></a>
+                            <ul>
+                                <li><a href="{#{{ path('enfants') }}#}"><span>Enfants</span></a></li>
+                                <li><a href="{#{{ path('ados') }}#}"><span>Jeunes</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sub"><a href="{#{{ path('espace') }}#}"><span>Espace Tibériade</span></a>
+                            <ul>
+                                <li><a href="{#{{ path('cafe') }}#}"><span>Pause Café</span></a></li>
+                                <li><a href="{#{{ path('livres') }}#}"><span>Coin Livre</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='last'><a href="{#{{ path('contact') }}#}"><span>Contact</span></a></li> 
+                            {% if app.user %}
+                                {% if app.user.role == 'admin' %}
+                                <li><a href="{{ path('admin') }}">Administration</a></li>
+                                {% endif %}
+                            {% endif %}
                     </ul>
-                </li>
-                <li class="has-sub"><a href="{#{{ path('jeunes') }}#}"><span>Jeunes</span></a>
-                    <ul>
-                        <li><a href="{#{{ path('enfants') }}#}"><span>Enfants</span></a></li>
-                        <li><a href="{#{{ path('ados') }}#}"><span>Jeunes</span></a></li>
-                    </ul>
-                </li>
-                <li class="has-sub"><a href="{#{{ path('espace') }}#}"><span>Espace Tibériade</span></a>
-                    <ul>
-                        <li><a href="{#{{ path('cafe') }}#}"><span>Pause Café</span></a></li>
-                        <li><a href="{#{{ path('livres') }}#}"><span>Coin Livre</span></a></li>
-                    </ul>
-                </li>
-                <li class='last'><a href="{#{{ path('contact') }}#}"><span>Contact</span></a></li> 
-                    {% if app.user %}
-                        {% if app.user.role == 'admin' %}
-                        <li><a href="{{ path('admin') }}">Administration</a></li>
-                        {% endif %}
-                    {% endif %}
-            </ul>
-            <p class="slogan1">
-                “À Tibériade, tu trouveras
-                <br>
-                un accueil, une présence,
-                <br>
-                une parole, un livre qui
-                <br>
-                peuvent répondre à tes
-                <br>
-                questionnements... ”
-            </p>
-            </aside>
-        </nav>
+                    <div class="slogan">
+                        “À Tibériade, tu trouveras
+                        <br>
+                        un accueil, une présence,
+                        <br>
+                        une parole, un livre qui
+                        <br>
+                        peuvent répondre à tes
+                        <br>
+                        questionnements... ”
+                    </div>
+                </aside>
+            </nav>
 
-            
-        <section>
 
-            <div id="contenu">
-            {% block body %}{% endblock %}
-        </div>
+            <section>
 
-    </section>
+                <div id="contenu">
+                {% block body %}{% endblock %}
+            </div>
+
+        </section>
+    </div>
     <footer>
         {% block footer %}
             {% if app.user %}
