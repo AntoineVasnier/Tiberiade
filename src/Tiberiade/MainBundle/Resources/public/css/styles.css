@@ -1382,3 +1382,16 @@ table td{
     padding-right: 15px;
     border: solid 1px #c2c2c2;
 }
+
+#contenu div{
+    margin-bottom: 5px;
+}
+
+#contenu div a{
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+#contenu div img{
+    margin-right: 5px;
+}
