@@ -6,12 +6,8 @@
 
 {% block body %}
     <h2>Gérer les articles : </h2>
-    <div>
-        <a  href='{{ path('ajouterArticle')}}'>
-            <img src="{{asset('bundles/tiberiademain/img/addition-icon.png')}}">Ajouter un article
-        </a>
-    </div>
-    {% if articles is empty %}       
+    <a href='{{ path('ajouterArticle')}}'><img src="{{asset('bundles/tiberiademain/img/addition-icon.png')}}">Ajouter un article</a>
+        {% if articles is empty %}       
         <h3>---- Aucun article n'a été trouvée ----</h3>       
     {% endif%}
     <table>
