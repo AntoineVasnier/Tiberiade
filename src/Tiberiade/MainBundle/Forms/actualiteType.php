@@ -31,14 +31,16 @@ class actualiteType extends AbstractType {
                     'constraints' => array(new NotBlank()),
                     'widget' => "single_text",
                     'html5' => false,
+                    'format' => 'dd/MM/yyyy',
                     'attr' => ['class' => 'js-datepicker'],
-                    'label' => 'Date de début : '
+                    'label' => 'Date de début : ',
                 ))
                 ->add('dateFin', DateType::class, array(
                     'widget' => "single_text",
                     'html5' => false,
                     'attr' => ['class' => 'js-datepicker'],
-                    'label' => 'Date de fin : '
+                    'label' => 'Date de fin : ',
+                    'required' => false
                 ))
                 ->add('file', FileType::class, array(
                     'label' => "Image de l'actualité : ",
@@ -59,7 +61,7 @@ class actualiteType extends AbstractType {
         $builder->addEventListener(FormEvents::SUBMIT, function(FormEvent $event){
             $data = $event->getData();
             /** @var Article $data */
-            if (isset($data->getDateFin))
+            if (!isset($data->getDateFin))
             {
                $data->setDateFin($data->getDateDebut()); 
             }                 

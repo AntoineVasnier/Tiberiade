@@ -1364,3 +1364,21 @@ h2 {
 .row-soon {
     margin: 0;
 }
+
+table{
+    width:100%;
+}
+
+table th{
+    text-align: center;
+    padding: 15px 0 15px 0;
+    border: solid 1px #c2c2c2;
+    color : #5364A9;
+    
+}
+table td{
+    text-align: center;
+    padding: 15px;
+    padding-right: 15px;
+    border: solid 1px #c2c2c2;
+}

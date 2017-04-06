@@ -11,6 +11,6 @@
         <h3>---- Aucune actualité n'a été trouvée ----</h3>       
     {% endif%}
     {% for actualite in actualites %}
-        <p>{{ loop.index }} - {{ actualite.getTitre() }} - {{ actualite.getDateDebut() }}<a href='{#{{ path('modifierArticle',{'id':annonce.id})}}#}'><img class="icone" src="{{ asset('bundles/tiberiademain/img/modifier.jpg') }}" alt='bouton modifier'></a> <a href='{#{{ path('supprimerArticle',{'id':annonce.id})}}#}'><img class="icone" src="{{ asset('bundles/tiberiademain/img/supprimer.png') }}" alt='bouton supprimer'></a></p>
+        <p>{{ loop.index }} - {{ actualite.getTitre() }} - {{ actualite.getDateDebut()|date('d/m/Y') }}<a href='{#{{ path('modifierArticle',{'id':annonce.id})}}#}'><img class="icone" src="{{ asset('bundles/tiberiademain/img/modifier.jpg') }}" alt='bouton modifier'></a> <a href='{#{{ path('supprimerArticle',{'id':annonce.id})}}#}'><img class="icone" src="{{ asset('bundles/tiberiademain/img/supprimer.png') }}" alt='bouton supprimer'></a></p>
     {% endfor %}
 {% endblock %}
